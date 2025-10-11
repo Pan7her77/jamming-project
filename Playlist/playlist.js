@@ -23,9 +23,31 @@ const Playlist = ({ playlistName}) => {
         alert('Track already in playlist!');
         }
     };
+
+    // Function to remove a track from the playlist
+    const removeTrack = (trackToRemove) => {
+        tracks((prevTracks) => prevTracks.filter(track => track.id !== trackToRemove.id));
+    };
+
     // Example usage
     const newTrack = {id: 4, text: 'New Track, New Artist, New Album'};
     const exsistingTrack = {id: 2, text: 'Chosen, Jay Manwell, Chosen'};
+
+    // Render the playlist
+    const trackList = tracks.map(track => track.text);
+
+    //Rename Playlist
+    function renamePlaylist(newName) {
+        // Logic to rename the playlist
+        console.log(`Renaming playlist to: ${newName}`);
+    };
+
+    //Save Playlist
+    const trackURIs = tracks.map(track => track.uri);
+    function savePlaylist() {
+        // Logic to save the playlist
+        console.log('Saving playlist with tracks:', trackURIs);
+    };
 
     return (
         <div>
@@ -41,8 +63,13 @@ const Playlist = ({ playlistName}) => {
       <button className="add-btn" onClick={() => addTrack(newTrack)}>
         ➕ Add Track
       </button>
+
+        {/*Remove Button*/}
+      <button className="remove-btn" onClick={() => removeTrack(exsistingTrack)}>
+        ➖ Remove Track
+        </button>
         </div>
     );
-}
+};
 
 export default Playlist;
