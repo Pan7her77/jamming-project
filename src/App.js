@@ -1,30 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
+import SearchBar from './components/searchbar';
+import Playlist from './components/playlist';
 
 
 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          Enjoy React!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div>
+           
+            <h1>Jam'n sync</h1>
+            <p>Making a playlist shouldn't be that hard?</p>
+            <SearchBar />
+            <Playlist />
+            
+        </div>
+    );
 }
-
 export default App;

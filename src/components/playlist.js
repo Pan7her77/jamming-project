@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Tracklist from '../Tracklist/tracklist';
-import './playlist.css';
+import '../styles/playlist.css';
 
 const Playlist = ({ playlistName}) => {
     // Store tracks in state
@@ -9,6 +8,7 @@ const Playlist = ({ playlistName}) => {
         {id: 2, text: 'Chosen, Jay Manwell, Chosen'}, 
         {id: 3, text: 'In Your Way, Alex Jean, More Than Gold'}
         ];
+        console.log(tracks);
 
     //Function to check if a track exists
     const isTrackInPlaylist = (trackToCheck) => {
@@ -54,8 +54,8 @@ const Playlist = ({ playlistName}) => {
             <h2>{playlistName}</h2>
             <ul>
                 {tracks.map((track, index) => (
-                    <li key={index}>{track}</li>
-                ))}
+                    <li key={index}>{track.text}</li>
+                ))} 
             </ul>
             <p>{isTrackInPlaylist(newTrack) ? 'Track is in playlist' : 'Track is not in playlist'}</p>
 
